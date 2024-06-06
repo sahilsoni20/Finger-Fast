@@ -1,0 +1,42 @@
+.wrapper {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(23, 23, 23);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper p {
+    width: 100%;
+    padding: 15px;
+    margin: 0;
+    border: 1px solid rgb(52, 51, 51);
+    color: white;
+}
+
+.wrapper p span {
+    font-weight: bold;
+}
+
+.replayButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .replayButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .replayButton:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+  }
