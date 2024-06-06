@@ -5,7 +5,7 @@ type GameSummaryProps = {
   points: number;
   mistakes: number;
   earnedPoints: number;
-  handelReplay: () => void;
+  handleReplay: () => void;
 };
 
 export default function GameSummary({
@@ -13,22 +13,32 @@ export default function GameSummary({
   points,
   mistakes,
   earnedPoints,
-  handelReplay,
+  handleReplay,
 }: GameSummaryProps) {
   return (
     <div className={styles.wrapper}>
-      <p>WPM: {calculateWPM()}</p>
-      <p>Total Points: {points - mistakes + earnedPoints}</p>
-      <p>Total earned points: {earnedPoints}</p>
-      <p>Letter Missed: {mistakes}</p>
       <p>
-        Total Points Calculations:{" "}
-        <span>{`(${points} points) - (${mistakes} mistakes) + (${earnedPoints} earned points) = %{${
-          points - mistakes + earnedPoints
-        }`}</span>{" "}
+        WPM: <span>{calculateWPM()}</span>
       </p>
-      <button onClick={handelReplay} className={styles.button}>
-        Play Again 
+      <p>
+        Total Points: <span>{points - mistakes + earnedPoints}</span>
+      </p>
+      <p>
+        Points Earned: <span>{earnedPoints}</span>
+      </p>
+      <p>
+        Letter Mistakes: <span>{mistakes}</span>
+      </p>
+      <p>
+        Total Points Calculation:{" "}
+        <span>
+          {`(${points} points) - (${mistakes} mistakes) + (${earnedPoints} earned points) = ${
+            points - mistakes + earnedPoints
+          }`}
+        </span>
+      </p>
+      <button onClick={handleReplay} className={styles.replayButton}>
+        Play Again
       </button>
     </div>
   );
